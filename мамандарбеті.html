@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QazaqDev – Менің түйіндемем</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #1a1a1a;
+    }
+
+    header {
+      background-color: #001f3f;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-circle {
+      background-color: gold;
+      color: #001f3f;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      margin-left: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .menu-right {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .city-btn {
+      background-color: rgba(255, 215, 0, 0.1);
+      color: #FFD700;
+      border: 1px solid #FFD700;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .city-btn:hover {
+      background-color: rgba(255, 215, 0, 0.3);
+    }
+
+    .icon {
+      cursor: pointer;
+      font-size: 20px;
+      transition: color 0.2s ease;
+    }
+
+    .icon:hover {
+      color: gold;
+    }
+
+    .btn-create {
+      background-color: #f9b115;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      color: #002b5b;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-create:hover {
+      background-color: #e6a30f;
+    }
+
+    .profile-dropdown {
+      position: relative;
+    }
+
+    .profile-icon {
+      background-color: #f9b115;
+      color: #001f3f;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: none;
+      flex-direction: column;
+      padding: 10px 0;
+      width: 220px;
+      z-index: 100;
+    }
+
+    .dropdown-menu a {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #1a1a1a;
+      display: block;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown-menu a.logout {
+      color: red;
+    }
+
+    .profile-dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      color: #111;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 15px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .modal-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .ok-btn, .cancel-btn {
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .ok-btn {
+      background-color: #004080;
+      color: white;
+    }
+
+    .ok-btn:hover {
+      background-color: #0059b3;
+    }
+
+    .cancel-btn {
+      background-color: #ccc;
+    }
+
+    .cancel-btn:hover {
+      background-color: #bbb;
+    }
+
+    main {
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .section h2 {
+      margin-bottom: 10px;
+      color: #001f3f;
+    }
+
+    .section p {
+      margin: 5px 0;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    .btn {
+      background-color: #001f3f;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin: 5px 5px 5px 0;
+      display: inline-block;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #003366;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .tag {
+      background-color: #e0eafc;
+      padding: 6px 10px;
+      border-radius: 16px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 750px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-right {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <div class="logo-circle">QDev</div>
+      <nav>
+        <a href="C:\Users\ASYLZAT\Downloads\мамандарбеті.html">Менің түйіндемем</a>
+        <a href="#">Откликтер</a>
+        <a href="#">Көмек</a>
+      </nav>
+    </div>
+
+    <div class="menu-right">
+      <button id="citySelector" class="city-btn">📍 Алматы</button>
+
+      <div id="cityModal" class="modal">
+        <div class="modal-content">
+          <h3>Қаланы таңдаңыз</h3>
+          <select id="citySelect">
+            <option>Алматы</option>
+            <option>Астана</option>
+            <option>Шымкент</option>
+            <option>Қарағанды</option>
+            <option>Ақтау</option>
+          </select>
+          <div class="modal-buttons">
+            <button class="ok-btn" onclick="selectCity()">OK</button>
+            <button class="cancel-btn" onclick="closeModal()">Болдырмау</button>
+          </div>
+        </div>
+      </div>
+
+      <span class="icon" id="messagesIcon">💬</span>
+      <span class="icon" id="favoritesIcon">❤️</span>
+      <span class="icon" id="notificationsIcon">🔔</span>
+      <button class="btn-create" onclick="window.location.href='C:\Users\ASYLZAT\Downloads\резюмебеті.html'">Түйіндеме жасау</button>
+
+      <div class="profile-dropdown">
+        <div class="profile-icon">A</div>
+        <div class="dropdown-menu">
+          <a href="#">Параметрлер</a>
+          <a href="#">Жасырын компаниялар</a>
+          <a href="C:\Users\ASYLZAT\Downloads\index.html" class="logout">Шығу</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="section">
+      <h2>Asylzat Tursunkul</h2>
+      <p>Статус көрсетілмеген</p>
+      <p><strong>⚠️ Тағы 10 рет жауап беру қажет</strong> – шақыру алу үшін</p>
+    </div>
+
+    <div class="section">
+      <h2>Программист</h2>
+      <p>Жаңартылды: бүгін, 16:01</p>
+      <div class="stats">
+        <p>Көрсетілімдер: 0</p>
+        <p>Қаралымдар: 0</p>
+        <p>Шақырулар: 0</p>
+      </div>
+      <div>
+        <a href="#" class="btn">Жоғары көтеру</a>
+        <a href="#" class="btn">Редакциялау</a>
+        <a href="#" class="btn">Көшіру</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Қабілеттер мен тілдер</h2>
+      <p>Жұмыс берушілердің сенімін арттыру үшін растаңыз</p>
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">Java</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">API</span>
+        <span class="tag">Agile Project Management</span>
+        <span class="tag">AutoCAD</span>
+      </div>
+      <a href="C:\Users\ASYLZAT\Downloads\тестбеті.html" class="btn">Тест тапсыру</a>
+    </div>
+  </main>
+
+  <script>
+    const citySelector = document.getElementById("citySelector");
+    const modal = document.getElementById("cityModal");
+
+    citySelector.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+
+    function selectCity() {
+      const selectedCity = document.getElementById("citySelect").value;
+      citySelector.textContent = "📍 " + selectedCity;
+      closeModal();
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    document.getElementById("messagesIcon").addEventListener("click", function() {
+      window.location.href = "/messages";
+    });
+
+    document.getElementById("favoritesIcon").addEventListener("click", function() {
+      alert("Таңдаулы элементтеріңіз осында көрсетіледі.");
+    });
+
+    document.getElementById("notificationsIcon").addEventListener("click", function() {
+      alert("Хабарландырулар: жаңа шақырулар, жауаптар, хабарламалар.");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* Түстер */
+:root {
+  --main-dark: #002244;
+  --main-light: white;
+  --accent: #004488;
+  --white: #fff;
+}
+
+/* Негізгі */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--main-light);
+  color: var(--main-dark);
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-dark);
+}
+
+/* Навигация */
+.navbar {
+  background-color: var(--main-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-img {
+  height: 80px;
+  width: auto;
+  padding: 0 10px; /* үсті және асты 10px, сол мен оң — 0 */
+}
+
+.navbar nav a {
+  margin-left: 1.5rem;
+  font-weight: 500;
+}
+
+.btn-dark {
+  background-color: var(--main-dark);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+/* Басты блок */
+.hero {
+  background-image: url("https://avatars.mds.yandex.net/i?id=f412fb72ad829a7df57ea3dfdb9b680e_l-5288900-images-thumbs&n=13"); /* Фон суреттің жолы */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 2rem;
+  color: white;
+  position: relative;
+}
+
+/* Егер жазудың оқылуы қиын болса, үстінен фильтр (overlay) қосуға болады */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Қою қара фильтр */
+  z-index: 1;
+}
+
+.hero h2,
+.hero .cta-buttons {
+  position: relative;
+  z-index: 2; /* overlay үстінде болсын */
+}
+
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.btn-outline {
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+/* Адаптивті */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

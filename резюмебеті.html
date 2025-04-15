@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QazaqDev – Түйіндеме жасау</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue: #002b5b;
+      --blue-dark: #001933;
+      --gold: #f9b115;
+      --gold-dark: #e6a30f;
+      --light: #f5f7fa;
+      --white: #fff;
+      --gray: #666;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--blue-dark);
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 43, 91, 0.1);
+      border-top: 8px solid var(--gold);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 32px;
+      color: var(--blue);
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin: 20px 0 6px;
+      color: var(--blue);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      background-color: #fcfcfc;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--gold);
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: var(--gold);
+      color: var(--blue-dark);
+      font-weight: 600;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 43, 91, 0.15);
+    }
+
+    .btn:hover {
+      background-color: var(--gold-dark);
+    }
+
+    .section-title {
+      margin-top: 40px;
+      font-size: 20px;
+      color: var(--blue);
+      border-bottom: 2px solid var(--gold);
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+     @media (max-width: 750px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-right {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Түйіндеме жасау</h1>
+    <form>
+      <label for="fullname">Аты-жөніңіз</label>
+      <input type="text" id="fullname" placeholder="Мысалы: Айдос Нұрланұлы" required />
+
+      <label for="position">Қалаған позицияңыз</label>
+      <input type="text" id="position" placeholder="Мысалы: Frontend Developer" required />
+
+      <label for="category">Бағытты таңдаңыз</label>
+      <select id="category" required>
+        <option value="">-- Таңдаңыз --</option>
+        <option>Frontend</option>
+        <option>Backend</option>
+        <option>Fullstack</option>
+        <option>QA / тестілеу</option>
+        <option>DevOps</option>
+        <option>Data Science</option>
+        <option>Machine Learning</option>
+        <option>UI/UX Design</option>
+        <option>Game Development</option>
+        <option>Mobile Development</option>
+        <option>Product Management</option>
+        <option>Project Management</option>
+        <option>Business Analysis</option>
+        <option>System Administration</option>
+        <option>Cybersecurity</option>
+        <option>Tech Support</option>
+        <option>AI/ML Research</option>
+        <option>Network Engineering</option>
+        <option>Embedded Systems</option>
+        <option>Blockchain Development</option>
+      </select>
+
+      <label for="skills">Дағдылар</label>
+      <textarea id="skills" rows="4" placeholder="JavaScript, Git, Figma..."></textarea>
+
+      <label for="experience">Жұмыс тәжірибесі</label>
+      <textarea id="experience" rows="4" placeholder="Компания, жылдар, жоба сипаттамасы..."></textarea>
+
+      <label for="education">Білімі</label>
+      <input type="text" id="education" placeholder="Мысалы: Халықаралық IT университеті, 2020" />
+
+      <label for="languages">Білетін тілдер</label>
+      <input type="text" id="languages" placeholder="Қазақша – жетік, Ағылшынша – орташа" />
+
+      <button class="btn" type="submit">Түйіндемені сақтау</button>
+    </form>
+  </div>
+</body>
+</html>

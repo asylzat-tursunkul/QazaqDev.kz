@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кіру - Компания</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins',sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(https://avatars.mds.yandex.net/i?id=de4978160302821fb4df2cdec17fcf8c_l-4566301-images-thumbs&n=13);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+section {
+    position: relative;
+    max-width: 700px; /* Контейнер ені 500px */
+    height: auto; /* Биіктігі мазмұнға байланысты өзгеретін етіп орнатылды */
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(55px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 4rem; /* Контейнер ішіндегі бос кеңістік */
+}
+
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    max-width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+
+input:focus ~ label, 
+input:valid ~ label {
+    top: -5px;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    top: 20px;
+}
+
+.forget {
+    margin: 35px 0;
+    font-size: 0.85rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.forget label {
+    display: flex;
+    align-items: center;
+}
+
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.forget a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: rgb(255, 255,255, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+  background-color: rgb(255, 255,255, 0.5);
+}
+
+.register {
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    text-decoration: none;
+    color: gold;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+}
+ /* Адаптивті */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+  }
+  </style>
+</head>
+<body>
+  <section>
+    <form>
+      <h1>Кіру - Компания</h1>
+      <div class="inputbox">
+        <ion-icon name="mail-outline"></ion-icon>
+        <input type="email" required>
+        <label for="">E-mail</label>
+      </div>
+      <div class="inputbox">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input type="password" required>
+        <label for="">Құпиясөз</label>
+      </div>
+      <div class="forget">
+        <label for=""><input type="checkbox">Есте сақтау </label>
+        <a href="C:\Users\ASYLZAT\Downloads\құпиясөзұмыту.html"> Құпиясөзді ұмыттыңыз ба? </a>
+      </div>
+     <a href="C:\Users\ASYLZAT\Downloads\index.html">
+  <button type="button">Кіру</button>
+</a>
+      <div class="register">
+        <p>Есептік жазбаңыз жоқ па? <a href="C:\Users\ASYLZAT\Downloads\компания.html"> Тіркелу</a></p>
+      </div>
+    </form>
+  </section>
+</body>
+</html>
